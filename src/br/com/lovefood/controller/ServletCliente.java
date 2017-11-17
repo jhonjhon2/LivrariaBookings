@@ -11,11 +11,12 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.lovefood.entity.Cliente;
 import br.com.lovefood.service.ClienteService;
 
-@WebServlet({ "/sistema/cli/buscar", "/sistema/cli/excluir", "/sistema/cli/salvar", "/sistema/cli/atualizar" })
+@WebServlet({ "/sistema/cliente/buscar", "/sistema/cliente/excluir", "/sistema/cliente/salvar",
+		"/sistema/cliente/atualizar" })
 public class ServletCliente extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	private static final String PREFIX = "/sistema/cli/";
+	private static final String PREFIX = "/sistema/cliente/";
 
 	public ServletCliente() {
 		super();
@@ -65,11 +66,13 @@ public class ServletCliente extends HttpServlet {
 
 		Cliente c = new Cliente();
 
+		c.setId(Long.parseLong(request.getParameter("id")));
 		c.setNome(request.getParameter("nome"));
 		c.setLogin(request.getParameter("login"));
-		c.setSenha(request.getParameter("senha"));
+		c.setCpf(request.getParameter("cpf"));
 		c.setEndereco(request.getParameter("endereco"));
 		c.setTelefone(request.getParameter("telefone"));
+		c.setSenha(request.getParameter("senha"));
 
 		String resposta = "";
 
