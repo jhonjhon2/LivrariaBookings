@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.lovefood.entity.Cliente;
+import br.com.lovefood.entity.Usuario;
 
 public class ClienteDAO extends ConnectionDAO {
 
@@ -123,6 +124,36 @@ public class ClienteDAO extends ConnectionDAO {
 			if (conn != null)
 				conn.close();
 		}
+	}
+	
+	public Cliente efetuarLogin(Usuario u) throws SQLException {
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		Cliente c = null;
+		
+		try {
+			stmt = conn.prepareStatement("select id, nome, login, cpf, endereco, telefone from cliente where login like ? and senha = md5(?)");
+			stmt.setString(1, u.getLogin());
+			stmt.setString(2, u.getSenha());
+			
+			rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+				c = createCliente(rs);
+			}
+			
+		}finally {
+			if(conn != null)
+				conn.close();
+			
+			if(stmt != null)
+				stmt.close();
+			
+			if(rs != null)
+				rs.close();
+		}
+		
+		return c;
 	}
 
 	private Cliente createCliente(ResultSet rs) throws SQLException {

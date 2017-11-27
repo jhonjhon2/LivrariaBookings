@@ -35,7 +35,7 @@
 						<p class="form-title" style="color: red">${msg}</p>
 					</c:if>
 					<p class="form-title">Entrar</p>
-					<form class="login" action="login" method="post">
+					<form id="formLogin" class="login" action="login" method="post">
 						<div>
 							<div>
 								<label for="idLogin"></label>

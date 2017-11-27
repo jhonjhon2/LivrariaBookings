@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import br.com.lovefood.entity.Funcionario;
+import br.com.lovefood.entity.Usuario;
 import br.com.lovefood.persistence.FuncionarioDAO;
 
 public class FuncionarioService {
@@ -82,5 +83,15 @@ public class FuncionarioService {
 			e.printStackTrace();
 		}
 		return Boolean.FALSE;
+	}
+	
+	public Funcionario efetuaLogin(Usuario usuario) {
+		try {
+			return dao.efetuarLogin(usuario);
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
 	}
 }

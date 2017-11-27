@@ -11,6 +11,7 @@ create or replace table lovefood.funcionario (
 );
 
 select * from lovefood.funcionario;
+select id, nome, login, nivel from lovefood.funcionario;
 
 create or replace table lovefood.cliente (
 	id BIGINT PRIMARY KEY auto_increment,
@@ -21,6 +22,7 @@ create or replace table lovefood.cliente (
 	telefone varchar(255) not null,
 	senha varchar(255) not null
 );
+
 
 insert into lovefood.cliente values (null, 'Luis', 'lpjr', '12345678900', 'rua 0', '(21)2222-2222', md5('123'));
 

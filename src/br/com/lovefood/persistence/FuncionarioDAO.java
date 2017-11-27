@@ -9,6 +9,7 @@ import java.util.List;
 
 import br.com.lovefood.entity.Funcionario;
 import br.com.lovefood.entity.Funcionario.Nivel;
+import br.com.lovefood.entity.Usuario;
 
 public class FuncionarioDAO extends ConnectionDAO {
 
@@ -205,6 +206,36 @@ public class FuncionarioDAO extends ConnectionDAO {
 		}
 		
 		return funcionario;
+	}
+	
+	public Funcionario efetuarLogin(Usuario u) throws SQLException {
+		PreparedStatement stmt = null;
+		ResultSet rs = null;
+		Funcionario f = null;
+		
+		try {
+			stmt = conn.prepareStatement("select id, nome, login, nivel from lovefood.funcionario where login like ? and senha = md5(?)");
+			stmt.setString(1, u.getLogin());
+			stmt.setString(2, u.getSenha());
+			
+			rs = stmt.executeQuery();
+			
+			if(rs.next()) {
+				f = createFuncionario(rs);
+			}
+			
+		}finally {
+			if(conn != null)
+				conn.close();
+			
+			if(stmt != null)
+				stmt.close();
+			
+			if(rs != null)
+				rs.close();
+		}
+		
+		return f;
 	}
 	
 	private Funcionario createFuncionario(ResultSet rs) throws SQLException {
