@@ -99,4 +99,29 @@ $(document).ready(function() {
 ga('create', 'UA-40413119-1', 'bootply.com');
 ga('send', 'pageview');
 
+//input preview
+function readURL(input) {
+	if (input.files && input.files[0]) {
+		var reader = new FileReader();
+		reader.onload = function(e) {
+			$("#img_preview").attr('src', e.target.result)
+		};
+		reader.readAsDataURL(input.files[0]);
+	} else {
+		var img = input.value;
+		$("#img_preview").attr('src', img);
+	}
+}
 
+function verificaMostraBotao() {
+	$('#id_foto').each(function(index) {
+		if ($('#id_foto').eq(index).val() != "") {
+			readURL(this);
+			$('#img_title').hide();
+		}
+	});
+}
+
+$('#id_foto').on("change", function() {
+	verificaMostraBotao();
+});

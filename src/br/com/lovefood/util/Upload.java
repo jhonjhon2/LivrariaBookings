@@ -22,7 +22,7 @@ public class Upload {
 		response.setContentType("text/html;charset=UTF-8");
 
 		// pega o caminho real do projeto
-		final String path = request.getServletContext().getRealPath("resouces") + File.separator + "img";
+		final String path = request.getServletContext().getRealPath("resources") + File.separator + "img";
 		// resgata o arquivo do input
 		final Part filePart = request.getPart("foto");
 		// gera o nome aleatório usando o UUID
@@ -35,6 +35,7 @@ public class Upload {
 		try {
 			// cria o arquivo no diretório do projeto
 			out = new FileOutputStream(new File(path + File.separator + fileName));
+			System.out.println(path + File.separator + fileName);
 			filecontent = filePart.getInputStream();
 			
 			int read = 0;
