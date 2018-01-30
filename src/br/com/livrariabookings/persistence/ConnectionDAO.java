@@ -1,4 +1,4 @@
-package br.com.lovefood.persistence;
+package br.com.livrariabookings.persistence;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

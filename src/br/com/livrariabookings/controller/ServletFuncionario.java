@@ -1,4 +1,4 @@
-package br.com.lovefood.controller;
+package br.com.livrariabookings.controller;
 
 import java.io.IOException;
 
@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.lovefood.entity.Funcionario;
-import br.com.lovefood.entity.Funcionario.Nivel;
-import br.com.lovefood.service.FuncionarioService;
+import br.com.livrariabookings.entity.Funcionario;
+import br.com.livrariabookings.entity.Funcionario.Nivel;
+import br.com.livrariabookings.service.FuncionarioService;
 
 @WebServlet({ "/sistema/fun/buscar", "/sistema/fun/excluir", "/sistema/fun/salvar", "/sistema/fun/atualizar" })
 public class ServletFuncionario extends HttpServlet {

@@ -1,4 +1,4 @@
-package br.com.lovefood.filter;
+package br.com.livrariabookings.filter;
 
 import java.io.IOException;
 

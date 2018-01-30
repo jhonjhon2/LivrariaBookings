@@ -1,4 +1,4 @@
-package br.com.lovefood.controller;
+package br.com.livrariabookings.controller;
 
 import java.io.IOException;
 
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.lovefood.entity.Cliente;
-import br.com.lovefood.service.ClienteService;
+import br.com.livrariabookings.entity.Cliente;
+import br.com.livrariabookings.service.ClienteService;
 
 @WebServlet({ "/sistema/cliente/buscar", "/sistema/cliente/excluir", "/sistema/cliente/salvar",
 		"/sistema/cliente/atualizar" })

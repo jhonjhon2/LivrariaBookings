@@ -1,4 +1,4 @@
-package br.com.lovefood.entity;
+package br.com.livrariabookings.entity;
 
 public class Funcionario extends Usuario {
 

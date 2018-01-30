@@ -1,4 +1,4 @@
-package br.com.lovefood.persistence;
+package br.com.livrariabookings.persistence;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,8 +7,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.lovefood.entity.Cliente;
-import br.com.lovefood.entity.Usuario;
+import br.com.livrariabookings.entity.Cliente;
+import br.com.livrariabookings.entity.Usuario;
 
 public class ClienteDAO extends ConnectionDAO {
 

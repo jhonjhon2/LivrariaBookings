@@ -1,4 +1,4 @@
-package br.com.lovefood.controller;
+package br.com.livrariabookings.controller;
 
 import java.io.IOException;
 import javax.servlet.ServletException;
@@ -8,8 +8,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import br.com.lovefood.entity.Produto;
-import br.com.lovefood.util.Upload;
+import br.com.livrariabookings.entity.Produto;
+import br.com.livrariabookings.util.Upload;
 
 @WebServlet({ "/sistema/admin/prd/save", "/sistema/admin/prd/remove", "/sistema/prd/buscar" })
 @MultipartConfig

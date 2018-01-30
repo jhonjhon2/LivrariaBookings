@@ -1,12 +1,12 @@
-package br.com.lovefood.service;
+package br.com.livrariabookings.service;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import br.com.lovefood.entity.Cliente;
-import br.com.lovefood.entity.Usuario;
-import br.com.lovefood.persistence.ClienteDAO;
+import br.com.livrariabookings.entity.Cliente;
+import br.com.livrariabookings.entity.Usuario;
+import br.com.livrariabookings.persistence.ClienteDAO;
 
 public class ClienteService {
 	private ClienteDAO dao;

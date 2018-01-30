@@ -1,4 +1,4 @@
-package br.com.lovefood.controller;
+package br.com.livrariabookings.controller;
 
 import java.io.IOException;
 
@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import br.com.lovefood.entity.Usuario;
-import br.com.lovefood.service.ClienteService;
-import br.com.lovefood.service.FuncionarioService;
+import br.com.livrariabookings.entity.Usuario;
+import br.com.livrariabookings.service.ClienteService;
+import br.com.livrariabookings.service.FuncionarioService;
 
 @WebServlet({ "/sistema/login", "/sistema/logout" })
 public class ServletLogin extends HttpServlet {
